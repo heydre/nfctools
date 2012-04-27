@@ -15,18 +15,43 @@
  */
 package org.nfctools.ndef.wkt.records;
 
-
+/**
+ * This class represents the NFC Forum Well-known Type
+ * "The Recommended Action Record".
+ * <p>
+ * This record is local record type of the smart poster record type and defines
+ * the recommended action for the accepting NFC device.
+ */
 public class ActionRecord extends WellKnownRecord {
 
 	private Action action;
 
+	/**
+	 * Creates a new action record.
+	 * <p>
+	 * Currently there are three possible actions.<br>
+	 * Action.DEFAULT_ACTION - performs a typical action<br>
+	 * Action.SAVE_FOR_LATER - URI shall be saved for later use<br>
+	 * Action.OPEN_FOR_EDITING - URI shall be opened for further editing
+	 * 
+	 * @param action
+	 *            The recommended action.
+	 */
 	public ActionRecord(Action action) {
 		this.action = action;
 	}
 
+	/**
+	 * Default action record constructor.
+	 */
 	public ActionRecord() {
 	}
 
+	/**
+	 * Returns the action as an instance of Action.
+	 * 
+	 * @return The recommended action.
+	 */
 	public Action getAction() {
 		return action;
 	}
@@ -36,10 +61,26 @@ public class ActionRecord extends WellKnownRecord {
 		return "Action: " + action;
 	}
 
+	/**
+	 * Sets the action of this record.
+	 * <p>
+	 * Currently there are three possible actions.<br>
+	 * Action.DEFAULT_ACTION - performs a typical action<br>
+	 * Action.SAVE_FOR_LATER - URI shall be saved for later use<br>
+	 * Action.OPEN_FOR_EDITING - URI shall be opened for further editing
+	 * 
+	 * @param action
+	 *            The recommended action.
+	 */
 	public void setAction(Action action) {
 		this.action = action;
 	}
 
+	/**
+	 * Method checks if an action has been set (is not null).
+	 * 
+	 * @return True if there is an action and false otherwise.
+	 */
 	public boolean hasAction() {
 		return action != null;
 	}
@@ -60,7 +101,7 @@ public class ActionRecord extends WellKnownRecord {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		ActionRecord other = (ActionRecord)obj;
+		ActionRecord other = (ActionRecord) obj;
 		if (action != other.action)
 			return false;
 		return true;
