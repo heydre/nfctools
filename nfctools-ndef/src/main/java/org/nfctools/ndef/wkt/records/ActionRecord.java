@@ -17,10 +17,10 @@ package org.nfctools.ndef.wkt.records;
 
 /**
  * This class represents the NFC Forum Well-known Type
- * "The Recommended Action Record".
+ * "Recommended Action Record".
  * <p>
- * This record is local record type of the smart poster record type and defines
- * the recommended action for the accepting NFC device.
+ * This record is a local record type of the smart poster record type and
+ * defines the recommended action for the accepting NFC device.
  */
 public class ActionRecord extends WellKnownRecord {
 
